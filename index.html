@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,6 +72,14 @@
         .download-button:hover {
             background-color: #ff6347;
         }
+
+        /* Increased font size for description */
+        #description {
+            font-size: 22px;
+            color: #ffcc00;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
     </style>
     <script>
         // Function to detect the user's browser language and display appropriate content
@@ -78,101 +87,27 @@
             const userLang = navigator.language || navigator.userLanguage; // Get the user's browser language
             const languageMap = {
                 'en': {
-                    'heading': 'XVideo Player 380000+ videos by categories',
-                    'subheading': 'WORKS WITHOUT INTERNET',
+                    'heading': 'Exclusive Video Player with 490000+ Videos by categories',
+                    'subheading': 'WATCH WITHOUT INTERNET',
                     'button': 'DOWNLOAD',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
+                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player',
+                    'description': 'Our platform offers a unique opportunity to watch over 490,000 exclusive videos, available for offline viewing. Use the video player and enjoy exclusive content directly on your device.'
                 },
                 'es': {
-                    'heading': 'XVideo Player 380000+ vídeos por categorías',
-                    'subheading': 'FUNCIONA SIN INTERNET',
+                    'heading': 'Reproductor de Video Exclusivo con 490000+ Videos por categorías',
+                    'subheading': 'MIRA SIN INTERNET',
                     'button': 'DESCARGAR',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'fr': {
-                    'heading': 'Lecteur XVideo 380000+ vidéos par catégories',
-                    'subheading': 'FONCTIONNE SANS INTERNET',
-                    'button': 'TÉLÉCHARGER',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'de': {
-                    'heading': 'XVideo Player 380000+ Videos nach Kategorien',
-                    'subheading': 'FUNKTIONIERT OHNE INTERNET',
-                    'button': 'HERUNTERLADEN',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
+                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player',
+                    'description': 'Nuestra plataforma ofrece una oportunidad única para ver más de 490,000 videos exclusivos, disponibles para ver sin conexión. Usa el reproductor de videos y disfruta de contenido exclusivo directamente en tu dispositivo.'
                 },
                 'ru': {
-                    'heading': 'XVideo Player 380000+ видео по категориям',
-                    'subheading': 'РАБОТАЕТ БЕЗ ИНТЕРНЕТ',
+                    'heading': 'Эксклюзивный Видео Плеер с 490000+ Видео по категориям',
+                    'subheading': 'СМОТРИ БЕЗ ИНТЕРНЕТА',
                     'button': 'СКАЧАТЬ',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
+                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player',
+                    'description': 'Наша платформа предлагает уникальную возможность просматривать более 490 000 эксклюзивных видео, доступных для оффлайн-просмотра. Используйте видеоплеер и наслаждайтесь эксклюзивным контентом прямо на вашем устройстве.'
                 },
-                'it': {
-                    'heading': 'XVideo Player 380000+ video per categorie',
-                    'subheading': 'FUNZIONA SENZA INTERNET',
-                    'button': 'SCARICA',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pt': {
-                    'heading': 'XVideo Player 380000+ vídeos por categorias',
-                    'subheading': 'FUNCIONA SEM INTERNET',
-                    'button': 'BAIXAR',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'zh-CN': {
-                    'heading': 'XVideo Player 380000+ 视频按类别',
-                    'subheading': '无需互联网即可使用',
-                    'button': '下载',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ko': {
-                    'heading': 'XVideo Player 380000+ 비디오 카테고리별',
-                    'subheading': '인터넷 없이 작동',
-                    'button': '다운로드',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ja': {
-                    'heading': 'XVideo Player 380000+ カテゴリ別動画',
-                    'subheading': 'インターネットなしで動作',
-                    'button': 'ダウンロード',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'hi': {
-                    'heading': 'XVideo Player 380000+ वीडियो श्रेणियों के अनुसार',
-                    'subheading': 'इंटरनेट के बिना काम करता है',
-                    'button': 'डाउनलोड',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ar': {
-                    'heading': 'مشغل XVideo 380000+ فيديو حسب الفئات',
-                    'subheading': 'يعمل بدون الإنترنت',
-                    'button': 'تنزيل',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'bn': {
-                    'heading': 'XVideo Player 380000+ ভিডিও ক্যাটেগরিতে',
-                    'subheading': 'ইন্টারনেট ছাড়া কাজ করে',
-                    'button': 'ডাউনলোড',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'tr': {
-                    'heading': 'XVideo Player 380000+ videolar kategorilerde',
-                    'subheading': 'İnternetsiz çalışır',
-                    'button': 'İNDİR',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pl': {
-                    'heading': 'XVideo Player 380000+ wideo według kategorii',
-                    'subheading': 'DZIAŁA BEZ INTERNETU',
-                    'button': 'POBIERZ',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'cs': {
-                    'heading': 'XVideo Player 380000+ videí podle kategorií',
-                    'subheading': 'PRACUJE BEZ INTERNETU',
-                    'button': 'STÁHNOUT',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                }
+                // Add more languages as needed...
             };
 
             // Default to English if the language is not in the map
@@ -183,12 +118,14 @@
             document.getElementById('subheading').innerText = language.subheading;
             document.getElementById('download-button').innerText = language.button;
             document.getElementById('download-button').href = language.downloadLink;
+            document.getElementById('description').innerText = language.description;
         }
 
         // Run the detectLanguage function when the page loads
         window.onload = detectLanguage;
     </script>
 </head>
+
 <body>
     <div id="container">
         <!-- First Image with link -->
@@ -198,9 +135,10 @@
             </a>
         </div>
 
-        <!-- Text between images -->
-        <div class="heading" id="heading">XVideo Player 380000+ videos by categories</div>
-        <div class="subheading" id="subheading">WORKS WITHOUT INTERNET</div>
+        <!-- Heading and Description -->
+        <div class="heading" id="heading">Exclusive Video Player with 490000+ Videos by categories</div>
+        <div class="subheading" id="subheading">WATCH WITHOUT INTERNET</div>
+        <p id="description">Our platform offers a unique opportunity to watch over 490,000 exclusive videos, available for offline viewing. Use the video player and enjoy exclusive content directly on your device.</p>
 
         <!-- Download Button with dynamic link -->
         <a href="#" class="download-button" id="download-button" target="_blank" rel="noopener noreferrer">
@@ -215,4 +153,5 @@
         </div>
     </div>
 </body>
+
 </html>
