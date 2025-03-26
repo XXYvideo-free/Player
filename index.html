@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Language" content="en">
-    <meta name="google" content="translate: no">
-    <title>XVideos</title>
+    <title>XVideos Access</title>
     <style>
         body, html {
             margin: 0;
@@ -31,7 +29,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
             text-align: center;
-            margin: 20px 0;
+            margin-top: 80px;
         }
 
         .heading {
@@ -42,10 +40,113 @@
             margin-bottom: 20px;
         }
 
-        .subheading {
-            font-size: 20px;
-            color: #ffcc00;
+        .sub-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 5px;
             margin-bottom: 20px;
+        }
+
+        .info-text {
+            font-size: 18px;
+            color: #ccc;
+            margin: 15px 0;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sub-info-text {
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .steps {
+            margin: 20px 0;
+            text-align: left;
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .steps span.number {
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 18px;
+        }
+
+        #cta-button {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            text-transform: uppercase;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+
+        .password-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .password-container input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            max-width: 400px;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .password-container button {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            text-transform: uppercase;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .password-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+
+        .notification {
+            display: none;
+            color: #28a745;
+            font-weight: bold;
         }
 
         .image-container img {
@@ -56,166 +157,133 @@
             cursor: pointer;
         }
 
-        .download-button {
-            font-size: 18px;
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background: #ff4500;
             color: #fff;
-            background-color: #ff4500;
             border: none;
-            padding: 15px 30px;
             border-radius: 8px;
             cursor: pointer;
-            text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
         }
 
-        .download-button:hover {
-            background-color: #ff6347;
+        .popup button:hover {
+            background: #ff6347;
         }
     </style>
-    <script>
-        // Function to detect the user's browser language and display appropriate content
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage; // Get the user's browser language
-            const languageMap = {
-                'en': {
-                    'heading': 'Exclusive Video Player with 490000+ Videos by categories',
-                    'subheading': 'WATCH EVEN WITHOUT INTERNET',
-                    'button': 'INSTALL AND WATCH FOR FREE!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'es': {
-                    'heading': 'Reproductor de Video Exclusivo con 490000+ Videos por categorías',
-                    'subheading': 'MIRA INCLUSO SIN INTERNET',
-                    'button': '¡INSTALA Y MIRA GRATIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ru': {
-                    'heading': 'Эксклюзивный Видео Плеер с 490000+ Видео по категориям',
-                    'subheading': 'СМОТРИ ДАЖЕ БЕЗ ИНТЕРНЕТА',
-                    'button': 'УСТАНОВИ И СМОТРИ БЕСПЛАТНО!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'fr': {
-                    'heading': 'Lecteur Vidéo Exclusif avec 490000+ Vidéos par catégories',
-                    'subheading': 'REGARDEZ MÊME SANS INTERNET',
-                    'button': 'INSTALLEZ ET REGARDEZ GRATUITEMENT!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'de': {
-                    'heading': 'Exklusiver Video Player mit 490000+ Videos nach Kategorien',
-                    'subheading': 'SCHAU SOGAR OHNE INTERNET',
-                    'button': 'INSTALLIEREN UND FÜR KOSTENLOS ANSCHAUEN!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'it': {
-                    'heading': 'Video Player Esclusivo con 490000+ Video per categorie',
-                    'subheading': 'GUARDA ANCHE SENZA INTERNET',
-                    'button': 'INSTALLA E GUARDA GRATIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pt': {
-                    'heading': 'Reprodutor de Vídeo Exclusivo com 490000+ Vídeos por categorias',
-                    'subheading': 'ASSISTA MESMO SEM INTERNET',
-                    'button': 'INSTALE E ASSISTA GRÁTIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'zh-CN': {
-                    'heading': '独家视频播放器，提供490000+个按类别的视频',
-                    'subheading': '即使没有互联网也能观看',
-                    'button': '安装并免费观看！',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ko': {
-                    'heading': '490000+ 개의 카테고리별 비디오가 있는 독점 비디오 플레이어',
-                    'subheading': '인터넷 없이도 시청하세요',
-                    'button': '설치하고 무료로 시청하세요!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ja': {
-                    'heading': '490000+ カテゴリ別の動画を提供する独占動画プレーヤー',
-                    'subheading': 'インターネットなしで視聴可能',
-                    'button': 'インストールして無料で視聴！',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'hi': {
-                    'heading': '490000+ वीडियो श्रेणियों के अनुसार एक्ज़क्लूसिव वीडियो प्लेयर',
-                    'subheading': 'इंटरनेट के बिना भी देखें',
-                    'button': 'इंस्टॉल करें और फ्री में देखें!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ar': {
-                    'heading': 'مشغل الفيديو الحصري مع 490000+ فيديو حسب الفئات',
-                    'subheading': 'شاهد حتى بدون الإنترنت',
-                    'button': 'قم بالتثبيت وشاهد مجاناً!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'bn': {
-                    'heading': '490000+ ভিডিও ক্যাটেগরিতে এক্সক্লুসিভ ভিডিও প্লেয়ার',
-                    'subheading': 'ইন্টারনেট ছাড়া দেখুন',
-                    'button': 'ইনস্টল করুন এবং ফ্রি দেখুন!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'tr': {
-                    'heading': '490000+ Video Kategorileriyle Eksklizif Video Oynatıcı',
-                    'subheading': 'İnternet olmadan bile izleyin',
-                    'button': 'Ücretsiz Yükle ve İzle!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pl': {
-                    'heading': 'Ekskluzywny Odtwarzacz Wideo z 490000+ Wideo według Kategorii',
-                    'subheading': 'Oglądaj nawet bez internetu',
-                    'button': 'Zainstaluj i oglądaj za darmo!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'cs': {
-                    'heading': 'Exkluzivní Video Přehrávač s 490000+ Videí podle kategorií',
-                    'subheading': 'Sledujte i bez internetu',
-                    'button': 'Nainstalujte a sledujte zdarma!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                }
-            };
-
-            // Default to English if the language is not in the map
-            const language = languageMap[userLang.substring(0, 2)] || languageMap['en'];
-
-            // Update content dynamically based on the detected language
-            document.getElementById('heading').innerText = language.heading;
-            document.getElementById('subheading').innerText = language.subheading;
-            document.getElementById('download-button').innerText = language.button;
-            document.getElementById('download-button').href = language.downloadLink;
-        }
-
-        // Run the detectLanguage function when the page loads
-        window.onload = detectLanguage;
-    </script>
 </head>
-
 <body>
     <div id="container">
-        <!-- First Image with link -->
+        <!-- ai_bot image -->
         <div class="image-container">
-            <a href="https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player" target="_blank" rel="noopener noreferrer">
-                <img src="ai_bot.png" alt="AI Bot" />
-            </a>
+            <img src="ai_bot.png" alt="AI Bot" id="ai-bot-image" />
         </div>
 
-        <!-- Heading and Description -->
-        <div class="heading" id="heading">Exclusive Video Player with 490000+ Videos by categories</div>
-        <div class="subheading" id="subheading">WATCH EVEN WITHOUT INTERNET</div>
+        <!-- ENJOY 490000+ VIDEOS IN VARIOUS CATEGORIES -->
+        <div class="sub-heading" id="sub-heading">ENJOY 490000+ VIDEOS IN VARIOUS CATEGORIES</div>
 
-        <!-- Download Button with dynamic link -->
-        <a href="#" class="download-button" id="download-button" target="_blank" rel="noopener noreferrer">
-            INSTALL AND WATCH FOR FREE!
-        </a>
-
-        <!-- Second Image with link -->
+        <!-- ai_botfull image -->
         <div class="image-container">
-            <a href="https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player" target="_blank" rel="noopener noreferrer">
-                <img src="ai_botfull.png" alt="AI Bot Full" />
-            </a>
+            <img src="ai_botfull.png" alt="AI Bot Full" id="ai-botfull-image" />
+        </div>
+
+        <!-- Password generator section -->
+        <div class="password-container">
+            <input type="text" id="password" readonly placeholder="*****************" />
+            <br>
+            <button onclick="generatePassword()" id="generate-password">GET ACCESS PASSWORD</button>
+            <button onclick="copyPassword()" id="copy-password">Copy Password</button>
+            <div class="notification" id="notification">Password copied!</div>
+        </div>
+
+        <!-- Unlock text -->
+        <div class="info-text" id="info-text">Unlock the XVideos section in 2 easy steps, it takes a few seconds!</div>
+
+        <!-- ANSWER TWO QUESTIONS AND -->
+        <div class="sub-info-text">ANSWER TWO QUESTIONS AND</div>
+
+        <!-- Steps -->
+        <div class="steps">
+            <p><span class="number" id="step1-number">1.</span> <span id="step1">ENTER USERNAME</span></p>
+            <p><span class="number" id="step2-number">2.</span> <span id="step2">PASTE THE GENERATED PASSWORD</span></p>
+        </div>
+
+        <!-- CTA button with link -->
+        <a href="https://offers.affimelody.com/click?pid=116623&offer_id=831&redirect=https://www.fuck4locals.com" id="cta-button" target="_blank" rel="noopener noreferrer">CHECK IT OUT! IT'S FAST AND FREE!</a>
+
+        <!-- ai_botlend image -->
+        <div class="image-container">
+            <img src="ai_botlend.png" alt="AI Botlend" id="ai-botlend-image" />
         </div>
     </div>
-</body>
 
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message">NEED UNLOCKING</p>
+            <button onclick="closePopup()">GO</button>
+        </div>
+    </div>
+
+    <script>
+        function generatePassword() {
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const specialChars = "~!@#$%^&*()_+";
+            const passwordLength = Math.floor(Math.random() * 3) + 15;
+            let password = "";
+            password += specialChars[Math.floor(Math.random() * specialChars.length)];
+            for (let i = password.length; i < passwordLength; i++) {
+                const randomIndex = Math.floor(Math.random() * chars.length);
+                password += chars[randomIndex];
+            }
+            password = password.split('').sort(() => Math.random() - 0.5).join('');
+            document.getElementById('password').value = password;
+        }
+
+        function copyPassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.select();
+            document.execCommand('copy');
+            
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 2000);
+        }
+
+        document.getElementById('ai-bot-image').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        document.getElementById('cta-button').addEventListener('click', function() {
+            // Handle button click action
+        });
+    </script>
+</body>
 </html>
